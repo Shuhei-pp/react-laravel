@@ -9,7 +9,7 @@ services:
         build: ./infrastructure/react
         volumes:
             - ./frontend:/usr/src/app/frontend
-        command: sh -c 'yarn start'
+        command: sh -c 'cd frontend && yarn start'
         ports:
             - '3000:3000'
         tty: true
