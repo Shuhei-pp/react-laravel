@@ -1,8 +1,10 @@
-body {
+.signin_background{
   background-color: #808080;
+  width: 100%;
+  height: 700px;
 }
 
-form {
+.signin_form {
   width: 400px;
   padding: 40px 10px;
   position: absolute;
@@ -13,16 +15,16 @@ form {
   text-align: center;
 }
 
-form h1,form p {
+.signin_form h1,.signin_form p {
   color: white;
   font-weight: 500;
 }
 
-form p {
+.signin_form p {
   font-size: 10px;
 }
 
-form input[type = "id"],form input[type = "password"] {
+.signin_form input[type = "text"],.signin_form input[type = "password"] {
   border: 0;
   background: none;
   display: block;
@@ -36,12 +38,12 @@ form input[type = "id"],form input[type = "password"] {
   text-align: center;
 }
 
-form input[type = "id"]:focus,form input[type = "password"]:focus {
+.signin_form input[type = "text"]:focus,.signin_form input[type = "password"]:focus {
   width: 280px;
   background-color: #f0f8ff;
 }
 
-form input[type = "submit"]{
+.signin_form input[type = "submit"]{
   border: 0;
   background: none;
   display: block;
@@ -57,7 +59,7 @@ form input[type = "submit"]{
   cursor: pointer;
 }
 
-form input[type = "submit"]:hover {
+.signin_form input[type = "submit"]:hover {
   background-color: #6c69ff;
   border: 2px solid #6c69ff;
 }
