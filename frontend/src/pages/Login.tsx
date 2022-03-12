@@ -1,7 +1,21 @@
 import React from 'react';
+import '../css/Login.css';
+
 const Login = () =>{
   return (
-    <h1>Loginpage</h1>
+    <div>
+      <form name="login_form">
+        <div className="login_form_top">
+          <h1>ログイン画面</h1>
+          <p>ユーーザID、パスワードをご入力の上、「ログイン」ボタンをクリックしてください。</p>
+        </div>
+        <div className="login_form_btm">
+          <input type="id" name="user_id" placeholder="ユーザーIDを入力してください"/><br/>
+          <input type="password" name="password"placeholder="パスワードを入力してください"/>
+        </div>
+        <button type="submit">ログイン</button>
+      </form>
+    </div>
   )
 } 
 
