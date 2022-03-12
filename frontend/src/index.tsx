@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 //Components
-import Home from './conponents/Home';
-import Mypage from './conponents/Mypage';
-import Login from './conponents/Login';
+import Home from './pages/Home';
+import Mypage from './pages/Mypage';
+import Login from './pages/Login';
 
 //Routes
 ReactDOM.render(
