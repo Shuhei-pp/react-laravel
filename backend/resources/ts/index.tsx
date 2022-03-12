@@ -7,6 +7,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Home from './pages/Home';
 import Mypage from './pages/Mypage';
 import Login from './pages/Login';
+import Signin from './pages/Signin';
 
 //Routes
 ReactDOM.render(
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route path="/" element={<Home/>} />
         <Route path="/top" element={<Mypage />} />
         <Route path="/login" element={<Login />}/>
+        <Route path="/Signin" element={<Signin />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
