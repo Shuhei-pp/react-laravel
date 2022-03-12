@@ -11,7 +11,8 @@ RUN apt-get update && \
     apt-get -y install git unzip libzip-dev libicu-dev libonig-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/list/* && \
-    docker-php-ext-install intl pdo_mysql zip bcmath
+    docker-php-ext-install intl pdo_mysql zip bcmath &&\
+    apt-get install -y nodejs npm && npm install n -g && n 14.15.3
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 
