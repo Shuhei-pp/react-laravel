@@ -6,8 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 //Components
-import Home from './conponents/Home'
-import Mypage from './conponents/Mypage'
+import Home from './conponents/Home';
+import Mypage from './conponents/Mypage';
+import Login from './conponents/Login';
 
 //Routes
 ReactDOM.render(
@@ -15,7 +16,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/top" element={<Mypage />}/>
+        <Route path="/top" element={<Mypage />} />
+        <Route path="/login" element={<Login />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
