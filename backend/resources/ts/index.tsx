@@ -8,16 +8,19 @@ import Mypage from './pages/Mypage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
+import Header from './components/Header';
+
 //Routes
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/top" element={<Mypage />} />
-        <Route path="/login" element={<Login />}/>
-        <Route path="/Signup" element={<Signup />}/>
-      </Routes>
+      <Header/>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/top" element={<Mypage />} />
+          <Route path="/login" element={<Login />}/>
+          <Route path="/Signup" element={<Signup />}/>
+        </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('index')
