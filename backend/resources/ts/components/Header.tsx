@@ -15,19 +15,19 @@ const Header = () => {
         </ul>
       </div>
       <div className="dropdown">
-  <button type="button" id="dropdown1"
-      className="btn btn-secondary dropdown-toggle"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false">
-    Dropdown button
-  </button>
-  <div className="dropdown-menu" aria-labelledby="dropdown1">
-    <a className="dropdown-item" href="#">Menu #1</a>
-    <a className="dropdown-item" href="#">Menu #2</a>
-    <a className="dropdown-item" href="#">Menu #3</a>
-  </div>
-</div>
+        <button type="button" id="dropdown1"
+          className="btn btn-secondary dropdown-toggle"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          Dropdown button
+        </button>
+        <div className="dropdown-menu" aria-labelledby="dropdown1">
+          <a className="dropdown-item" href="#">Menu #1</a>
+          <a className="dropdown-item" href="#">Menu #2</a>
+          <a className="dropdown-item" href="#">Menu #3</a>
+        </div>
+      </div>
     </header>
   );
 }

@@ -13,15 +13,15 @@ import Header from './components/Header';
 //Routes
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Header/>
+    <Header/>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/top" element={<Mypage />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/Signup" element={<Signup />}/>
         </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('index')
 );
