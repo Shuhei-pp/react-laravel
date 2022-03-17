@@ -45,7 +45,8 @@ class Header extends React.Component <Props, State>{
             >
               Dropdown button
             </button>
-            <div className="dropdown-menu" aria-labelledby="dropdown1">
+            <div className={this.state.isDropdownOpen ? 'dropdown-menu' : "d-block dropdown-menu"}
+              aria-labelledby="dropdown1">
               <a className="dropdown-item" href="#">Menu #1</a>
               <a className="dropdown-item" href="#">Menu #2</a>
               <a className="dropdown-item" href="#">Menu #3</a>
