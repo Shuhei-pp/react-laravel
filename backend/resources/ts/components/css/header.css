@@ -220,6 +220,8 @@ body {
   margin: 0;
   padding: 0;
 }
-a{
-  color: #333;
+
+/*sp*/
+header .dropdown{
+  margin: 0 0 0 auto;
 }
