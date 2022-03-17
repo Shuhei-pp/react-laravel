@@ -219,6 +219,12 @@ body {
   padding: 0;
 }
 
+@media screen and (min-width: 767px){
+  header .dropdown{
+    display: none;
+  }
+}
+
 /*sp*/
 header .dropdown{
   margin: 0 0 0 auto;
