@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
+import axios from 'axios';
 import './css/Login.css';
 
-const Login = () =>{
+
+
+const getUser = () => {
+  axios.get("/api/user")
+    .then(res => {
+      console.log('ログイン済み');
+      console.log(res.data);
+
+    }).catch(err => {
+      console.log('ログインしてません');
+    })
+}
+
+const Login = () => {
+  getUser();
   return (
     <div className="login_background">
       <form className="login_form">
