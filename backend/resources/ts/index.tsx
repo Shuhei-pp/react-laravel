@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
-//Components
+//pages
 import Home from './pages/Home';
 import Mypage from './pages/Mypage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Logout from './pages/Logout';
 
+//components
 import Header from './components/Header';
 
 //Routes
@@ -19,7 +21,8 @@ ReactDOM.render(
           <Route path="/" element={<Home/>} />
           <Route path="/top" element={<Mypage />} />
           <Route path="/login" element={<Login />}/>
-          <Route path="/Signup" element={<Signup />}/>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/logout" element={<Logout />}/>
         </Routes>
       </BrowserRouter>
   </React.StrictMode>,

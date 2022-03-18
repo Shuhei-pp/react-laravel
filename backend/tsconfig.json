@@ -19,6 +19,6 @@
   },
   "include": [
       "resources/ts/**/*" // TypeScriptのソース配置場所
-  ]
+    ]
 }
 

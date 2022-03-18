@@ -12,10 +12,11 @@ class Login extends React.Component{
   }
 
   Post() {
-    axios.get('/sanctum/csrf-cookie')
+    axios.get('/sanctum/csrf-cookie',{ withCredentials: true })
       .then(response => {
-        axios.post('/api/login', this.state)
-          .then(() => {
+        axios.post('/api/login',
+          this.state)
+          .then((res) => {
             console.log("成功や");
           })
           .catch((error) => {

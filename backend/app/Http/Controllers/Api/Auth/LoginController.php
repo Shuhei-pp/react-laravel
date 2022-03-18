@@ -27,11 +27,11 @@ class LoginController extends Controller
             $status = 200;
             $message = 'OK';
             $user = Auth::user();
+            $request->session()->regenerate();
             //古いトークン削除&新しいトークン作成
             $user->tokens()->where('name','token_name')->delete();
-            $token = $user->createToken('token_name')->plainTextToken;
-            $user->api_token = $token;
-            return response()->json(['result' => $result, 'status' => $status, 'user' => $user, 'message' => $message]);
+            $token = $user->createToken('token_name');
+            return ['token' => $token->plainTextToken];
         }
         $result = false;
         $status = 401;
