@@ -28,8 +28,9 @@ class LoginController extends Controller
             $message = 'OK';
             $user = Auth::user();
             //古いトークン削除&新しいトークン作成
-            $user->tokens()->where('name','token-name')->delete();
-            $token = $user->createToken('token-name')->plainTextToken;
+            $user->tokens()->where('name','token_name')->delete();
+            $token = $user->createToken('token_name')->plainTextToken;
+            $user->api_token = $token;
             return response()->json(['result' => $result, 'status' => $status, 'user' => $user, 'message' => $message]);
         }
         $result = false;
@@ -37,20 +38,6 @@ class LoginController extends Controller
         $message = 'ユーザが見つかりません';
         $user = null;
         return response()->json(['result' => $result, 'status' => $status, 'user' => $user, 'message' => $message]);
-    }
-
-    /**
-     * ログアウト
-     * 
-     * @param \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-     * 
-     */
-    public function logout(Request $request){
-        $result = true;
-        $status = 200;
-        $message = 'ログアウトしました';
-        return response()->json(['result' => $result, 'status' => $status, 'message' => $message]);
     }
 }
 

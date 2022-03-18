@@ -21,3 +21,6 @@ Route::post('/login',[App\Http\Controllers\Api\Auth\LoginController::class,'logi
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:sanctum')
+    ->post('/logout',[App\Http\Controllers\Api\Auth\LogoutController::class,'logout']);
