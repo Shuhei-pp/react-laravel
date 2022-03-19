@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState,VFC } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './css/header.css';
 
-const Header = () => {
+
+
+const Header: React.FC  = () => {
   const [isDropdownOpen, setIsDropDownOpen] = useState(true);
+
+  function logout() {
+    axios.get('/api/logout',{ withCredentials: true })
+      .then((res) => {
+        location.href='/';
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
   return (
     <header>
@@ -29,7 +43,7 @@ const Header = () => {
             aria-labelledby="dropdown1">
             <a className="dropdown-item" href="#">Menu #1</a>
             <a className="dropdown-item" href="#">Menu #2</a>
-            <a className="dropdown-item" href="#">Menu #3</a>
+            <a className="dropdown-item" href="#" onClick={()=>{logout()}}>Menu #3</a>
           </div>
         </div>
       </div>

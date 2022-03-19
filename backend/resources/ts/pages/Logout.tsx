@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 class Logout extends React.Component{
@@ -9,10 +10,11 @@ class Logout extends React.Component{
   }
 
   logout() {
-      
-    axios.get('/api/user',{ withCredentials: true })
+    const navigate = useNavigate();
+    axios.get('/api/logout',{ withCredentials: true })
       .then((res) => {
         console.log(res);
+        navigate('/');
       })
       .catch((error) => {
         console.log(error);
@@ -23,13 +25,12 @@ class Logout extends React.Component{
   render() {
     return (
       <div className="login_background">
-        <div className="login_form_text">
-          <h1>Logout</h1>
-          <p>メールアドレス、Passwordをご入力の上、「Login」ボタンをクリックしてください。</p>
-        </div>
-        <div className="login_form_input">
-          <button onClick={this.logout}>ユーザーを調べる</button>
-        </div>
+        <form className="login_form">
+          <div className="login_form_text">
+            <h1>Login</h1>
+            <button onClick={this.logout}>ログアウト</button>
+          </div>
+        </form>
       </div>
     )
   }
