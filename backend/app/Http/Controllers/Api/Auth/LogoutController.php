@@ -19,11 +19,12 @@ class LogoutController extends Controller
         $user = Auth::user();
 
         //トークン削除
-        $user->tokens()->delete();
-        $request->user()->currentAccessToken()->delete();
         $result = true;
         $status = 200;
         $message = 'ログアウトしました';
+
+        $user->tokens()->where('name', 'token-name')->delete();
+
         return response()->json(['result' => $result, 'status' => $status, 'message' => $message]);
     }
 }
