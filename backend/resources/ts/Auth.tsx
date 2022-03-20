@@ -35,7 +35,7 @@ const useProvideAuth = () => {
   const [user, setUser] = useState<UserData|null>(null);
 
   //ログインしたらユーザーデータをセット
-  const setLoginUser = (userData: UserData) => {
+  const setLoginUser = (userData: any) => {
     setUser(userData);
   }
 

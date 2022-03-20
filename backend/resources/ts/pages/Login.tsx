@@ -1,10 +1,15 @@
 import React, { useState, useEffect }  from 'react';
 import axios from 'axios';
+
+import { useAuth } from "../Auth";
+
 import './css/Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  //フロントの認証情報管理
+  const auth = useAuth();
 
   const Post = () =>{
     axios.get('/sanctum/csrf-cookie',{ withCredentials: true })
@@ -12,7 +17,7 @@ const Login = () => {
         axios.post('/api/login',
           {email,password})
           .then((res) => {
-            console.log(res);
+            auth?.setLoginUser(res.data.user);
           })
           .catch((error) => {
             console.log(error);
