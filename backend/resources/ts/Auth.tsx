@@ -46,10 +46,12 @@ const useProvideAuth = () => {
 
   useEffect(() => {
     axios.get('/api/user').then((res) => {
-      setUser(res.data);
+      setUser(res.data.user);
     }).catch(() => {
       setUser(null);
-      location.href = '/login';
+      if (location.pathname != '/login') {
+        location.href = '/login';
+      }
     })
   }, [])
   

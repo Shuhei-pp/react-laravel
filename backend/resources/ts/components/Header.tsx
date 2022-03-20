@@ -1,6 +1,6 @@
 import React, { useState,VFC } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+
 import './css/header.css';
 
 
@@ -13,7 +13,6 @@ const Header: React.FC  = () => {
       .then(response => {
         axios.post('/api/logout', { withCredentials: true })
           .then((res) => {
-            console.log(res);
             location.href='/';
           })
           .catch((error) => {
