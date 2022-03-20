@@ -16,16 +16,18 @@ import Header from './components/Header';
 //Routes
 ReactDOM.render(
   <React.StrictMode>
-    <Header/>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/user" element={<PrivateRoute component={<Mypage />}/>}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/logout" element={<PrivateRoute component={<Logout />}/>}/>
-        </Routes>
-      </BrowserRouter>
+    <ProvideAuth>
+      <Header/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/user" element={<PrivateRoute component={<Mypage />}/>}/>
+            <Route path="/login" element={<Login />}/>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/logout" element={<PrivateRoute component={<Logout />}/>}/>
+          </Routes>
+        </BrowserRouter>
+    </ProvideAuth>
   </React.StrictMode>,
   document.getElementById('index')
 );
