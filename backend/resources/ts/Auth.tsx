@@ -49,7 +49,12 @@ const useProvideAuth = () => {
       setUser(res.data.user);
     }).catch(() => {
       setUser(null);
-      if (location.pathname != '/login') {
+      //ログインしていなくてもレンダリングされないページ
+      if (
+        location.pathname != '/login' &&
+        location.pathname != '/signup' &&
+        location.pathname != '/'
+      ){
         location.href = '/login';
       }
     })
