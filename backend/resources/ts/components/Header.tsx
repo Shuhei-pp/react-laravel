@@ -9,12 +9,16 @@ const Header: React.FC  = () => {
   const [isDropdownOpen, setIsDropDownOpen] = useState(true);
 
   function logout() {
-    axios.get('/api/logout',{ withCredentials: true })
-      .then((res) => {
-        location.href='/';
-      })
-      .catch((error) => {
-        console.log(error);
+    axios.get('/sanctum/csrf-cookie', { withCredentials: true })
+      .then(response => {
+        axios.post('/api/logout', { withCredentials: true })
+          .then((res) => {
+            console.log(res);
+            location.href='/';
+          })
+          .catch((error) => {
+            console.log(error);
+          })
       })
   }
 

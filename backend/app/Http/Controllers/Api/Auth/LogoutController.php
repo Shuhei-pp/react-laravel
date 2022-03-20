@@ -17,13 +17,11 @@ class LogoutController extends Controller
     public function logout(Request $request)
     {
         $user = Auth::user();
-
-        //トークン削除
         $result = true;
         $status = 200;
         $message = 'ログアウトしました';
-
-        $user->tokens()->where('name', 'token-name')->delete();
+        //ログアウト
+        Auth::guard('web')->logout();
 
         return response()->json(['result' => $result, 'status' => $status, 'message' => $message]);
     }
