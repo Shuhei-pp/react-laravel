@@ -47,7 +47,7 @@ const useProvideAuth = () => {
 
   useEffect(() => {
     axios.get('/api/user').then((res) => {
-      setUser(res.data.user);
+      setUser(res.data);
     }).catch(() => {
       setUser(null);
     })

@@ -48,6 +48,7 @@ const Header: React.FC  = () => {
             aria-labelledby="dropdown1">
             <Link to="/login" className="dropdown-item">Login</Link>
             <Link className="dropdown-item" to="/user">Mypage</Link>
+            <Link className="dropdown-item" to="/signup">Signup</Link>
             <a className="dropdown-item" onClick={()=>{logout()}}>Logout</a>
           </div>
         </div>
