@@ -12,7 +12,7 @@ const Login = () => {
         axios.post('/api/login',
           {email,password})
           .then((res) => {
-            console.log("成功や");
+            console.log(res);
           })
           .catch((error) => {
             console.log(error);
