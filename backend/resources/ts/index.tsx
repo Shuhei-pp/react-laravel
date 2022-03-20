@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import ProvideAuth, { PrivateRoute } from './Auth';
+import ProvideAuth, { PrivateRoute, PublicRoute } from './Auth';
 
 //pages
 import Home from './pages/Home';
@@ -20,9 +20,9 @@ ReactDOM.render(
       <Header/>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/login" element={<Login />}/>
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<PublicRoute component={<Login />}/>}/>
+            <Route path="/signup" element={<PublicRoute component={<Signup />} />} />
             //privateRoute
             <Route path="/user" element={<PrivateRoute component={<Mypage />} />} />
             <Route path="/logout" element={<PrivateRoute component={<Logout />}/>}/>

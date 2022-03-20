@@ -4,6 +4,7 @@ import React, { useContext, createContext, ReactNode, useState,useEffect } from 
 import axios from 'axios';
 
 import Login from './pages/Login';
+import Mypage from './pages/Mypage';
 
 interface UserData{
   email: string,
@@ -49,14 +50,6 @@ const useProvideAuth = () => {
       setUser(res.data.user);
     }).catch(() => {
       setUser(null);
-      //ログインしていなくてもレンダリングされないページ
-      if (
-        location.pathname != '/login' &&
-        location.pathname != '/signup' &&
-        location.pathname != '/'
-      ){
-        location.href = '/login';
-      }
     })
   }, [])
   
@@ -70,11 +63,22 @@ const useProvideAuth = () => {
 //認証済みルート
 export const PrivateRoute = (props:any) =>{
   const auth = useAuth();
-  if (auth?.user!=null) {
-    return props.component
+  if (auth?.user==null) {
+    return <Login />
   }
   return(
-    <Login />
+    props.component
   )
 
+}
+
+//未認証ルート
+export const PublicRoute = (props: any) => {
+  const auth = useAuth();
+  if (auth?.user == null) {
+    return props.component;
+  }
+  return (
+    <Mypage/>
+  )
 }
