@@ -31,7 +31,7 @@ class LoginController extends Controller
             //古いトークン削除&新しいトークン作成
             $user->tokens()->where('name','token_name')->delete();
             $token = $user->createToken('token_name');
-            return ['token' => $token->plainTextToken];
+            return response()->json(['result' => $result, 'status' => $status, 'user' => $user, 'message' => $message]);
         }
         $result = false;
         $status = 401;

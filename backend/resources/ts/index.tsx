@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import ProvideAuth, { PrivateRoute, PublicRoute } from './Auth';
 
 //pages
 import Home from './pages/Home';
@@ -15,16 +16,19 @@ import Header from './components/Header';
 //Routes
 ReactDOM.render(
   <React.StrictMode>
-    <Header/>
+    <ProvideAuth>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/top" element={<Mypage />} />
-          <Route path="/login" element={<Login />}/>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/logout" element={<Logout />}/>
-        </Routes>
+        <Header/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<PublicRoute component={<Login />}/>}/>
+            <Route path="/signup" element={<PublicRoute component={<Signup />} />} />
+            //privateRoute
+            <Route path="/user" element={<PrivateRoute component={<Mypage />} />} />
+            <Route path="/logout" element={<PrivateRoute component={<Logout />}/>}/>
+          </Routes>
       </BrowserRouter>
+    </ProvideAuth>
   </React.StrictMode>,
   document.getElementById('index')
 );
