@@ -1,4 +1,5 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { useAuth } from "../Auth";
@@ -8,6 +9,7 @@ import './css/Login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   //フロントの認証情報管理
   const auth = useAuth();
 
@@ -18,9 +20,11 @@ const Login = () => {
           {email,password})
           .then((res) => {
             auth?.setLoginUser(res.data.user);
+            console.log('ログイン成功');
+            navigate('/user');
           })
           .catch((error) => {
-            console.log(error);
+            console.log('ログイン失敗');
           })
       })
   }
@@ -34,7 +38,7 @@ const Login = () => {
         <div className="login_form_input">
           <input type="mail" onChange={(e) => setEmail(e.target.value)} placeholder="mail" />
           <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-          <input type="submit" name="botton" value="Login" />
+          <input type="submit" value="Login" />
         </div>
       </form>
     </div>

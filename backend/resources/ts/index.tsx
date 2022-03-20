@@ -17,8 +17,8 @@ import Header from './components/Header';
 ReactDOM.render(
   <React.StrictMode>
     <ProvideAuth>
-      <Header/>
-        <BrowserRouter>
+      <BrowserRouter>
+        <Header/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<PublicRoute component={<Login />}/>}/>
@@ -27,7 +27,7 @@ ReactDOM.render(
             <Route path="/user" element={<PrivateRoute component={<Mypage />} />} />
             <Route path="/logout" element={<PrivateRoute component={<Logout />}/>}/>
           </Routes>
-        </BrowserRouter>
+      </BrowserRouter>
     </ProvideAuth>
   </React.StrictMode>,
   document.getElementById('index')
