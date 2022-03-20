@@ -19,7 +19,7 @@ const Login = () => {
         axios.post('/api/login',
           {email,password})
           .then((res) => {
-            auth?.setLoginUser(res.data.user);
+            auth?.setLoginUser(res.data);
             console.log('ログイン成功');
             navigate('/user');
           })

@@ -1,6 +1,7 @@
 import React, { useState,VFC } from 'react';
 import { useNavigate, Link} from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from "../Auth";
 
 import './css/header.css';
 
@@ -9,12 +10,15 @@ import './css/header.css';
 const Header: React.FC  = () => {
   const [isDropdownOpen, setIsDropDownOpen] = useState(true);
   const navigate = useNavigate();
+  //フロントの認証情報管理
+  const auth = useAuth();
 
   function logout() {
     axios.get('/sanctum/csrf-cookie', { withCredentials: true })
       .then(response => {
         axios.post('/api/logout', { withCredentials: true })
           .then((res) => {
+            auth?.setLoginUser(null);
             navigate('/');
           })
           .catch((error) => {
