@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import ProvideAuth, { PrivateRoute } from './Auth';
 
 //pages
 import Home from './pages/Home';
@@ -19,7 +20,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/top" element={<Mypage />} />
+        <Route path="/user" element={<PrivateRoute component={<Mypage />}/>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/signup" element={<Signup />} />
           <Route path="/logout" element={<Logout />}/>
