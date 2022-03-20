@@ -20,10 +20,10 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>} />
-        <Route path="/user" element={<PrivateRoute component={<Mypage />}/>}/>
+          <Route path="/user" element={<PrivateRoute component={<Mypage />}/>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/signup" element={<Signup />} />
-          <Route path="/logout" element={<Logout />}/>
+          <Route path="/logout" element={<PrivateRoute component={<Logout />}/>}/>
         </Routes>
       </BrowserRouter>
   </React.StrictMode>,

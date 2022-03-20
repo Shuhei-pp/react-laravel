@@ -10,11 +10,6 @@ interface UserData{
   password: string,
 }
 
-interface RouteProps{
-  path: string,
-  element: string,
-}
-
 //createContextを使うとどのコンポーネント(下の階層)でも値を渡すことができる
 const authContext = createContext<any>(null);
 
@@ -68,11 +63,11 @@ const useProvideAuth = () => {
 //認証済みルート
 export const PrivateRoute = (props:any) =>{
   const auth = useAuth();
-  if (auth?.user==null) {
-    return <Login />
+  if (auth?.user!=null) {
+    return props.component
   }
   return(
-    props.component
+    <Login />
   )
 
 }
