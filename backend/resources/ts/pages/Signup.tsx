@@ -31,7 +31,7 @@ const Signup = () => {
           <input type="text" onChange={(e) => { setName(e.target.value) }} placeholder="User Name"/>
           <input type="text" onChange={(e)=>{setEmail(e.target.value)}} placeholder="Mail"/>
           <input type="password" onChange={(e)=>{setPassword(e.target.value)}} placeholder="Password"/>
-          <input type="submit" onClick={()=>Signup()} value="Signup"/>
+          <button onClick={()=>Signup()}>Signup</button>
         </div>
       </div>
     </div>
