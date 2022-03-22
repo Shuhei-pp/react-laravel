@@ -30,7 +30,7 @@ const Login = () => {
   }
   return (
     <div className="login_background">
-      <form className="login_form" onSubmit={(event) => { Post() }}>
+      <div className="login_form">
         <div className="login_form_text">
           <h1>Login</h1>
           <p>メールアドレス、Passwordをご入力の上、「Login」ボタンをクリックしてください。</p>
@@ -38,9 +38,9 @@ const Login = () => {
         <div className="login_form_input">
           <input type="mail" onChange={(e) => setEmail(e.target.value)} placeholder="mail" />
           <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-          <input type="submit" value="Login" />
+          <button onClick={ ()=>{Post()}}>Login</button>
         </div>
-      </form>
+      </div>
     </div>
   )
 }
