@@ -37,11 +37,7 @@ const Header: React.FC  = () => {
           <li><Link className="button" to="/login">ログイン</Link></li>
         </ul>
         <div className="dropdown">
-          <button type="button" id="dropdown1"
-            className="btn btn-secondary dropdown-toggle"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
+          <button className="btn btn-secondary dropdown-toggle"
             onClick={()=>setIsDropDownOpen(!isDropdownOpen)}
           >
             Dropdown button
