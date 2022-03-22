@@ -43,7 +43,7 @@
   background-color: #f0f8ff;
 }
 
-.signup_form input[type = "submit"]{
+.signup_form button{
   border: 0;
   background: none;
   display: block;
@@ -59,7 +59,7 @@
   cursor: pointer;
 }
 
-.signup_form input[type = "submit"]:hover {
+.signup_form button:hover {
   background-color: #6c69ff;
   border: 2px solid #6c69ff;
 }
