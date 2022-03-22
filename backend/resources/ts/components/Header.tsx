@@ -32,11 +32,9 @@ const Header: React.FC  = () => {
       <div className="inner">
         <p className="logo"><Link className="over" to="/">COMPANY</Link></p>
         <ul className="navi">
-          <li><a href="/feature/">選ばれる理由</a></li>
-          <li><a href="/service/">サービス</a></li>
-          <li><a href="/case/">制作事例</a></li>
           <li><a href="/company/">会社案内</a></li>
-          <li><a className="button" href="/recruit/">お問い合わせ</a></li>
+          <li><Link className="button" to="/signup">新規登録</Link></li>
+          <li><Link className="button" to="/login">ログイン</Link></li>
         </ul>
         <div className="dropdown">
           <button type="button" id="dropdown1"
